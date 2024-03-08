@@ -46,6 +46,7 @@ defmodule SGP40.Transport.I2C do
 
   @impl SGP40.Transport
   def write_read(transport, register, bytes_to_read) do
+    Process.sleep(25)
     Circuits.I2C.write_read(transport.ref, transport.bus_address, register, bytes_to_read)
   end
 end
